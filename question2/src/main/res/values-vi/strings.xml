@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Q.2 Báo thức</string>
+
+    <string name="alarm_title">Báo thức</string>
+    <string name="alarm_item_empty_time">--:--</string>
+    <string name="alarm_add">Thêm báo thức</string>
+
+    <string name="repeat">Lặp lại</string>
+    <string name="save">Lưu</string>
+    <string name="sound">Âm báo</string>
+    <string name="vibrate">Rung</string>
+
+    <string name="alarm_detail_add_title">Thêm báo thức</string>
+    <string name="alarm_detail_edit_title">Sửa báo thức</string>
+    <string name="alarm_detail_select_sound">Chọn âm báo</string>
+    <string name="alarm_detail_sound_name_default">Mặc định</string>
+
+    <string name="sleep_schedule">Sleep Schedule</string>
+    <string name="wake_up">Thức dậy</string>
+    <string name="week_days">Mỗi ngày</string>
+
+    <string name="sleep_schedule_hr">%d h</string>
+    <string name="sleep_schedule_min">%d m</string>
+    <string name="bedtime">Giờ đi ngủ</string>
+    <string name="label">Nhãn</string>
+
+    <string name="cancel">Hủy</string>
+    <string name="alarm_delete">Xóa báo thức</string>
+</resources>

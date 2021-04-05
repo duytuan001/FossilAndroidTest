@@ -1,0 +1,95 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+
+    id 'dagger.hilt.android.plugin'
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("release-keystore.properties")
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId "com.duytuan.screeningtest.question1"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+//    signingConfigs {
+//        release {
+//            storeFile file(keystoreProperties.getProperty("storeFile"))
+//            storePassword keystoreProperties.getProperty("storePassword")
+//            keyAlias keystoreProperties.getProperty("keyAlias")
+//            keyPassword keystoreProperties.getProperty("keyPassword")
+//        }
+//    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility options.sourceCompatibility
+        targetCompatibility options.targetCompatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = options.jvmTarget
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res']
+        }
+    }
+
+    bundle {
+        language { enableSplit = false }
+        density { enableSplit = true }
+        abi { enableSplit = true }
+    }
+
+    splits {
+        abi {
+            reset()
+            include 'armeabi-v7a', 'arm64-v8a', 'mips', 'x86', 'x86_64'
+            universalApk false
+        }
+    }
+}
+
+dependencies {
+    implementation project(":core")
+
+    implementation "com.google.dagger:hilt-android:${hilt_version}"
+    kapt "com.google.dagger:hilt-compiler:${hilt_version}"
+
+    testImplementation "junit:junit:${versions.junit}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.androidx_junit}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.androidx_espresso}"
+}

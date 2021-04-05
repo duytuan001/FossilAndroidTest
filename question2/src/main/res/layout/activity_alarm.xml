@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        tools:context=".ui.home.AlarmActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/vAppbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAlarms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/space"
+            android:layout_marginEnd="@dimen/space"
+            android:layoutAnimation="@anim/layout_animation"
+            android:splitMotionEvents="false"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_alarm" />
+
+        <ViewStub
+            android:id="@+id/vEmptyStub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:inflatedId="@+id/tvEmpty"
+            android:layout="@layout/view_alarm_empty" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAdd"
+            style="@style/FloatingActionButton.Home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/space"
+            android:elevation="@dimen/space_10"
+            android:outlineAmbientShadowColor="?attr/colorSecondary"
+            android:outlineSpotShadowColor="?attr/colorSecondary"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+            tools:ignore="ContentDescription,UnusedAttribute" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

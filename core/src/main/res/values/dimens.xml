@@ -1,0 +1,64 @@
+<resources>
+
+    <dimen name="space">20dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+    <dimen name="divider">1dp</dimen>
+
+    <dimen name="space_0">0dp</dimen>
+    <dimen name="space_1">1dp</dimen>
+    <dimen name="space_2">2dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_6">6dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_10">10dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_14">14dp</dimen>
+    <dimen name="space_15">15dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_18">18dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_28">28dp</dimen>
+    <dimen name="space_30">30dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_34">34dp</dimen>
+    <dimen name="space_40">40dp</dimen>
+    <dimen name="space_42">42dp</dimen>
+    <dimen name="space_48">48dp</dimen>
+    <dimen name="space_50">50dp</dimen>
+    <dimen name="space_54">54dp</dimen>
+    <dimen name="space_60">60dp</dimen>
+    <dimen name="space_64">64dp</dimen>
+    <dimen name="space_70">70dp</dimen>
+    <dimen name="space_72">72dp</dimen>
+    <dimen name="space_80">80dp</dimen>
+    <dimen name="space_84">84dp</dimen>
+    <dimen name="space_100">100dp</dimen>
+    <dimen name="space_120">120dp</dimen>
+    <dimen name="space_140">140dp</dimen>
+    <dimen name="space_160">160dp</dimen>
+    <dimen name="space_180">180dp</dimen>
+    <dimen name="space_210">210dp</dimen>
+    <dimen name="space_240">240dp</dimen>
+    <dimen name="space_260">260dp</dimen>
+    <dimen name="space_300">300dp</dimen>
+    <dimen name="space_320">320dp</dimen>
+    <dimen name="space_360">360dp</dimen>
+
+    <dimen name="text_8">8sp</dimen>
+    <dimen name="text_10">10sp</dimen>
+    <dimen name="text_11">11sp</dimen>
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_13">13sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_17">17sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+    <dimen name="text_24">24sp</dimen>
+    <dimen name="text_28">28sp</dimen>
+    <dimen name="text_32">32sp</dimen>
+    <dimen name="text_42">42sp</dimen>
+    <dimen name="text_48">48sp</dimen>
+
+</resources>

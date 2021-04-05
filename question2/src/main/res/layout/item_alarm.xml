@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="item"
+            type="com.duytuan.screeningtest.question2.model.Alarm" />
+
+        <variable
+            name="enabledAlpha"
+            type="Float" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vContainer"
+        style="@style/ViewClickable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{handlers}"
+        android:paddingBottom="@dimen/space_12"
+        tool:background="@color/black">
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="@{enabledAlpha}"
+            android:text="@{item.getTimeDisplay()}"
+            android:textAppearance="?attr/textAppearanceHeadline4"
+            android:textColor="?attr/colorOnPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="11:30" />
+
+        <TextView
+            android:id="@+id/tvLabelAndRepeat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="@{enabledAlpha}"
+            android:text="@{item.getDescription()}"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="@color/white_80"
+            android:textSize="@dimen/text_12"
+            app:layout_constraintEnd_toStartOf="@id/swEnable"
+            app:layout_constraintStart_toStartOf="@id/tvTime"
+            app:layout_constraintTop_toBottomOf="@id/tvTime"
+            tool:text="Alarm, Monday" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swEnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{item.enabled}"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="@{handlers}"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            tool:checked="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

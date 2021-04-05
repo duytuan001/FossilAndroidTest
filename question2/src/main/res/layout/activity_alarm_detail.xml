@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.duytuan.screeningtest.question2.ui.detail.AlarmDetailViewModel" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/vRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.duytuan.screeningtest.core.widget.scroll.SpringScrollView
+            android:id="@+id/vScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/space_40"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/vContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_screen_detail"
+                android:paddingBottom="@dimen/space_54"
+                android:splitMotionEvents="false">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_title_screen_detail"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/space_8"
+                    android:paddingBottom="@dimen/space_8"
+                    android:text="@{viewModel.createMode ? @string/alarm_detail_add_title : @string/alarm_detail_edit_title}"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/white_80"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    style="@style/Button.Toolbar"
+                    android:text="@string/save"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancel"
+                    style="@style/Button.Toolbar"
+                    android:text="@string/cancel"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+                    app:layout_constraintGuide_begin="64dp" />
+
+                <TextView
+                    android:id="@+id/tvBedTimeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/space_8"
+                    android:letterSpacing="0.2"
+                    android:text="@string/bedtime"
+                    android:textColor="@color/slate"
+                    android:textSize="@dimen/text_10"
+                    app:drawableStartCompat="@drawable/ic_bed_time_dark"
+                    app:layout_constraintEnd_toStartOf="@id/tvWakeTimeLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/glHeader" />
+
+                <TextView
+                    android:id="@+id/tvBedTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:letterSpacing="0.06"
+                    android:lineSpacingExtra="6sp"
+                    android:textColor="@color/white_80"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintEnd_toEndOf="@id/tvBedTimeLabel"
+                    app:layout_constraintStart_toStartOf="@id/tvBedTimeLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvBedTimeLabel"
+                    tools:text="12:15 PM" />
+
+                <TextView
+                    android:id="@+id/tvWakeTimeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:letterSpacing="0.2"
+                    android:text="@string/wake_up"
+                    android:textColor="@color/slate"
+                    android:textSize="@dimen/text_10"
+                    app:drawableStartCompat="@drawable/ic_wake_up_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvBedTimeLabel"
+                    app:layout_constraintTop_toBottomOf="@id/glHeader"
+                    tools:ignore="SmallSp" />
+
+
+                <TextView
+                    android:id="@+id/tvWakeTime"
+                    style="@style/ViewClickable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:letterSpacing="0.06"
+                    android:lineSpacingExtra="6sp"
+                    android:textColor="@color/white_80"
+                    android:textSize="@dimen/text_18"
+                    app:layout_constraintEnd_toEndOf="@id/tvWakeTimeLabel"
+                    app:layout_constraintStart_toStartOf="@id/tvWakeTimeLabel"
+                    app:layout_constraintTop_toBottomOf="@id/tvWakeTimeLabel"
+                    tools:text="7:45 AM" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/tvBedTime" />
+
+                <com.duytuan.screeningtest.question2.widget.timepicker.SleepTimePicker
+                    android:id="@+id/vTimePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="280dp"
+                    app:divisionColor="@color/dark"
+                    app:labelColor="@color/slate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/glBody"
+                    app:progressBackgroundColor="@color/dark"
+                    app:progressBgStrokeWidth="26dp"
+                    app:progressColor="@color/white_80"
+                    app:progressStrokeWidth="26dp"
+                    app:sleepLayoutId="@layout/layout_picker_sleep"
+                    app:wakeLayoutId="@layout/layout_picker_wake" />
+
+                <TextView
+                    android:id="@+id/tvDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/vTimePicker"
+                    app:layout_constraintEnd_toEndOf="@id/vTimePicker"
+                    app:layout_constraintStart_toStartOf="@id/vTimePicker"
+                    app:layout_constraintTop_toTopOf="@id/vTimePicker"
+                    tools:text="7 Hr 30 Min" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space"
+                    android:layout_marginEnd="@dimen/space"
+                    app:cardBackgroundColor="@color/black_light_2"
+                    app:cardCornerRadius="@dimen/space_8"
+                    app:layout_constraintTop_toBottomOf="@id/vTimePicker">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/space"
+                        android:paddingTop="@dimen/space"
+                        android:paddingEnd="@dimen/space">
+
+                        <TextView
+                            android:id="@+id/tvRepeat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/repeat"
+                            android:textColor="@color/white_80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <include
+                            android:id="@+id/gbWeekday"
+                            layout="@layout/view_weekday_selected"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_10"
+                            app:layout_constraintTop_toBottomOf="@id/tvRepeat" />
+
+                        <View
+                            android:id="@+id/vDivider0"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider"
+                            android:layout_marginTop="@dimen/space_10"
+                            android:background="@color/slate"
+                            app:layout_constraintTop_toBottomOf="@id/gbWeekday" />
+
+                        <TextView
+                            android:id="@+id/tvLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingBottom="@dimen/space_10"
+                            android:text="@string/label"
+                            android:textColor="@color/white_80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/vDivider0" />
+
+                        <EditText
+                            android:id="@+id/etLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space"
+                            android:background="@null"
+                            android:gravity="end"
+                            android:hint="@string/pencil_hint"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLength="255"
+                            android:paddingTop="@dimen/space_6"
+                            android:paddingBottom="@dimen/space_6"
+                            android:text="@={viewModel.label}"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tvLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvLabel"
+                            tools:ignore="Autofill,LabelFor" />
+
+                        <View
+                            android:id="@+id/vDivider1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider"
+                            android:background="@color/slate"
+                            app:layout_constraintTop_toBottomOf="@id/tvLabel" />
+
+                        <TextView
+                            android:id="@+id/tvSoundLabel"
+                            style="@style/ViewClickable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingBottom="@dimen/space_10"
+                            android:text="@string/sound"
+                            android:textColor="@color/white_80"
+                            android:textStyle="bold"
+                            app:drawableEndCompat="@drawable/ic_baseline_navigate_next_24"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/vDivider1" />
+
+                        <TextView
+                            android:id="@+id/tvSoundName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/space_28"
+                            android:includeFontPadding="false"
+                            android:maxWidth="@dimen/space_160"
+                            android:textColor="?attr/colorSecondary"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintBaseline_toBaselineOf="@id/tvSoundLabel"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:soundName="@{viewModel.soundUri}"
+                            tools:text="Default" />
+
+                        <View
+                            android:id="@+id/vDivider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/divider"
+                            android:background="@color/slate"
+                            app:layout_constraintTop_toBottomOf="@id/tvSoundLabel" />
+
+                        <TextView
+                            android:id="@+id/tvVibrate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/space_10"
+                            android:paddingBottom="@dimen/space_10"
+                            android:text="@string/vibrate"
+                            android:textColor="@color/white_80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/vDivider2" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/swVibrate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{viewModel.isVibrationEnabled}"
+                            app:layout_constraintBottom_toBottomOf="@id/tvVibrate"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvVibrate" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDelete"
+                    style="@style/Button.Delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space"
+                    android:layout_marginTop="@dimen/space"
+                    android:layout_marginEnd="@dimen/space"
+                    android:text="@string/alarm_delete"
+                    app:isVisible="@{!viewModel.createMode}"
+                    app:layout_constraintTop_toBottomOf="@id/cvSettings" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.duytuan.screeningtest.core.widget.scroll.SpringScrollView>
+    </FrameLayout>
+</layout>

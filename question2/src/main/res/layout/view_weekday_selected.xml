@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:layout_width="match_parent"
+        android:id="@+id/bgWeekdays"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:singleSelection="false">
+
+        <Button
+            android:id="@+id/btnDay1"
+            style="@style/Button.WeekDay"
+            tools:text="Mon" />
+
+        <Button
+            android:id="@+id/btnDay2"
+            style="@style/Button.WeekDay"
+            tools:text="Tue" />
+
+        <Button
+            android:id="@+id/btnDay3"
+            style="@style/Button.WeekDay"
+            tools:text="Wed" />
+
+        <Button
+            android:id="@+id/btnDay4"
+            style="@style/Button.WeekDay"
+            tools:text="Thu" />
+
+        <Button
+            android:id="@+id/btnDay5"
+            style="@style/Button.WeekDay"
+            tools:text="Fri" />
+
+        <Button
+            android:id="@+id/btnDay6"
+            style="@style/Button.WeekDay"
+            tools:text="Sat" />
+
+        <Button
+            android:id="@+id/btnDay7"
+            style="@style/Button.WeekDay"
+            tools:text="Sun" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+</layout>
