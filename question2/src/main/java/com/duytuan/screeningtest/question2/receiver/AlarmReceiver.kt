@@ -53,7 +53,7 @@ class AlarmReceiver : BroadcastReceiver() {
 
         NotificationUtil.createNotificationChannel(context, channelId)
         manager.notify(id, builder.build().apply {
-            flags = Notification.FLAG_INSISTENT
+            flags = flags or Notification.FLAG_INSISTENT
         })
 
         // Reset Alarm manually
