@@ -18,7 +18,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/duytuan001/FossilAndroidTest">
-    <img src="question2/src/main/res/drawable/img_logo.png" alt="Logo" width="200" height="120">
+    <img src="question2/src/main/res/drawable/img_logo.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">Fossil Screening Test v0.2</h3>
@@ -74,7 +74,7 @@
 
 <img src="screenshots/mvvm_architecture.png" alt="MVVM">
 <img src="screenshots/viewmodel_hilt.png" alt="ViewModel">
-<img src="screenshots/paging3-layered-architecture.png.png" alt="paging">
+<img src="screenshots/paging3-layered-architecture.png" alt="paging">
 
 
 ### Installation
