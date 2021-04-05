@@ -48,8 +48,13 @@ class AlarmActivity : BaseActivity() {
     }
 
     private fun setupAddButton() {
-        // press scale effect
-        binding.btnAdd.stateListAnimator = AnimatorInflater.loadStateListAnimator(baseContext, R.animator.btn_scale_state)
+        try {
+            // press scale effect
+            // crash on API 21
+            binding.btnAdd.stateListAnimator = AnimatorInflater.loadStateListAnimator(baseContext, R.animator.btn_scale_state)
+        } catch (e: Exception) {
+
+        }
         binding.btnAdd.setOnClickListener {
             navigateToCreateAlarm()
         }
